@@ -4,7 +4,7 @@ Issues noticed in 2.16.0 due to change made in https://github.com/doctrine/orm/p
 
 ## Setup
 
-`composer install`
+`composer update`
 
 `bin/doctrine orm:schema-tool:drop --force`
 

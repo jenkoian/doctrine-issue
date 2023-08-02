@@ -34,15 +34,18 @@ $connection = DriverManager::getConnection([
 // obtaining the entity manager
 $entityManager = new EntityManager($connection, $config);
 
+// Delete products once our script has finished.
 register_shutdown_function(
     static function(EntityManager $entityManager) {
-        $products = $entityManager->getRepository(\Jenkoian\DoctrineIssue\Product::class)->findAll();
-
-        foreach ($products as $product) {
-            $entityManager->remove($product);
+        $schemaManager = $entityManager->getConnection()->createSchemaManager();
+        if ($schemaManager->tablesExist(['product']) !== true) {
+            return;
         }
 
-        $entityManager->flush();
+        $conn = $entityManager->getConnection();
+        $conn
+            ->prepare('DELETE FROM product')
+            ->executeQuery();
     },
     $entityManager
 );
