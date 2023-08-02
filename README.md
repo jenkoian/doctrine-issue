@@ -2,6 +2,8 @@
 
 Issues noticed in 2.16.0 due to change made in https://github.com/doctrine/orm/pull/10785
 
+Reported here: https://github.com/doctrine/orm/issues/10867
+
 ## Setup
 
 `composer update`
@@ -27,3 +29,7 @@ Issues noticed in 2.16.0 due to change made in https://github.com/doctrine/orm/p
 * Get a proxy version of the entity
 * Attempt to get a value from the entity
 * Will get an error where as before this would work
+
+## Working 2.15.5 version
+
+You can switch to the `doctrine-2.15.5` to see it working before, remember to run `composer update`
