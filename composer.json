@@ -1,0 +1,15 @@
+{
+    "name": "jenkoian/doctrine-issue",
+    "description": "Reproducer for doctrine issue",
+    "require": {
+        "doctrine/orm": "^2.16",
+        "doctrine/dbal": "^3.6",
+        "symfony/cache": "^6.3"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jenkoian\\DoctrineIssue\\": "src/"
+        }
+    }
+}
