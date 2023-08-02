@@ -6,7 +6,7 @@ require_once "bootstrap.php";
 
 $product = new Product();
 $product->setId(1);
-$product->setName('Product that will be removed outside of the EM');
+$product->setName('Test Product');
 $product->setUpdatedAt(new \DateTime());
 
 $entityManager->persist($product);

@@ -23,6 +23,7 @@ $conn
 // If you imagine this is within a findOrCreate() function for example, where the product wouldn't be found so we attempt to create it.
 $product = new Product();
 $product->setId(1);
+$product->setName('Product that will be removed outside of the EM');
 $product->setUpdatedAt(new \DateTime());
 
 $entityManager->persist($product);

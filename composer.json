@@ -2,7 +2,7 @@
     "name": "jenkoian/doctrine-issue",
     "description": "Reproducer for doctrine issue",
     "require": {
-        "doctrine/orm": "^2.16",
+        "doctrine/orm": "2.15.5",
         "doctrine/dbal": "^3.6",
         "symfony/cache": "^6.3"
     },

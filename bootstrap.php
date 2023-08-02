@@ -33,3 +33,16 @@ $connection = DriverManager::getConnection([
 
 // obtaining the entity manager
 $entityManager = new EntityManager($connection, $config);
+
+register_shutdown_function(
+    static function(EntityManager $entityManager) {
+        $products = $entityManager->getRepository(\Jenkoian\DoctrineIssue\Product::class)->findAll();
+
+        foreach ($products as $product) {
+            $entityManager->remove($product);
+        }
+
+        $entityManager->flush();
+    },
+    $entityManager
+);
